@@ -7,7 +7,7 @@ fetch(movieAPI).then((response)=>{return response.json()})
         console.log(jsonData);
     return jsonData.results;
 })
-//     .then((results)=>{
-//     results.forEach((film)=>console.log(`${film.title} ${film.episode_id}`))
-// })
+    .then((results)=>{
+    results.forEach((movies)=>console.log(`${movies.title} ${movies.genre}`))
+})
 //     .catch(error => console.log('Error getting films.', error));
