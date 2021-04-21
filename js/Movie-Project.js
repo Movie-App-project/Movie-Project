@@ -21,10 +21,9 @@
 //     })
 // console.log(movieTitles);
 
-var titleArr
-
+var movieArr
 $(document).ready(function () {
-    titleArr = []
+    movieArr = []
     // $(window).ready(function () {
     //     $("body").fadeIn(1000);
     // })
@@ -42,20 +41,23 @@ $(document).ready(function () {
                 // console.log(titleArr)
             })
         })
-    $("#currentMovies").append(`<div>${titleArr}</div>`)
-    console.log(titleArr)
+    $("#currentMovies").append(`<div>${movieArr}</div>`)
+    console.log(movieArr)
 });
 
 
 
 
 function renderMovies(movie) {
-    let html = "";
+    let html = "<div>";
     html += `<div>${movie.title}</div>`;
     // html += `<div>${movie.year}</div>`;
     // html += `<div>${movie.genre}</div>`;
     html += `<div>${movie.rating}</div>`;
-
+    html += `<div data-id="${movie.id}"></div>`
+    html += `<button class="delete">x</button>`
+    html += `<button class="edit">edit</button>`
+    html += "</div>";
     return html;
 }
 
@@ -63,6 +65,7 @@ $(".btn-primary").click(function(event){
     event.preventDefault();
     let movieTitle = $("#addMovie").val();
     let movieRating = $("#addRating").val();
+
 
     let myObj = {title: movieTitle, rating: movieRating};
 
@@ -73,18 +76,47 @@ $(".btn-primary").click(function(event){
         },
         body: JSON.stringify(myObj)
     };
-    fetch(movieAPI, options).then((response) => window.reload(response))
+    fetch(movieAPI, options).then((response) => location.reload())
+})
+
+
+
+$("div").on('click', 'button.delete', function(){
+    // let deleteMethod = {
+    //     method: "DELETE",
+    //     headers: {
+    //         "Content-Type": "application/json"
+    //     }
+    // }
+    // var target = $('<div></div>').click(function(){
+    //     console.log(this)
+    // })
+
+    // fetch(movieAPI + `/10`, deleteMethod).then(function(response){
+    //     console.log(response);
+    // })
+    console.log($(this).prev())
+
+})
+
+$("#edit").click(function(){
+    let deleteMethod = {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        }
+    }
+    // var target = $('<div></div>').click(function(){
+    //     console.log(this)
+    // })
+
+    fetch(movieAPI + `/6`, deleteMethod).then(function(response){
+        console.log(response);
+    })
+    console.log("test")
 })
 
 
 
 
-
-// function renderCoffees(coffees) {
-//     var html = '';
-//     for (var i = 0; i < coffees.length; i++) {
-//         html += renderCoffee(coffees[i]);
-//     }
-//     return html;
-// }
 
