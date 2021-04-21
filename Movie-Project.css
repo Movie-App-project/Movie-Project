@@ -19,7 +19,7 @@ body {
 
 .card {
     display:flex;
-    justify-content: center !important;;
+    justify-content: center !important;
     background:#AB1305 !important;
     box-shadow: 7px 7px #0E57AB;
 

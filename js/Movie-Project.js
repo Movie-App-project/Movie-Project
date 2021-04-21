@@ -2,24 +2,24 @@
 
 // KEY //
 
-fetch(movieAPI).then((response) => {
-    return response.json()
-})
-    .then((jsonData) => {
-        console.log(jsonData);
-        return jsonData.results;
-    })
+// fetch(movieAPI).then((response) => {
+//     return response.json()
+// })
+//     .then((jsonData) => {
+//         console.log(jsonData);
+//         return jsonData.results;
+//     })
 
 
-// MOVIE TITLE
-var movieTitles = fetch(movieAPI).then((response) => {
-    return response.json()
-})
-    .then((jsonData) => {
-        console.log(jsonData);
-        jsonData.forEach((movie) => console.log(`${movie.title} ${movie.genre}`))
-    })
-console.log(movieTitles);
+// // MOVIE TITLE
+// var movieTitles = fetch(movieAPI).then((response) => {
+//     return response.json()
+// })
+//     .then((jsonData) => {
+//         console.log(jsonData);
+//         jsonData.forEach((movie) => console.log(`${movie.title} ${movie.genre}`))
+//     })
+// console.log(movieTitles);
 
 var titleArr
 
@@ -47,21 +47,44 @@ $(document).ready(function () {
 });
 
 
+
+
 function renderMovies(movie) {
-    var html = '<div class="card">';
-    html += '<h6>' + movie.title + '</h6>';
-    html += '<p>' + movie.rating + '</p>';
-    html += '</div>';
-    return html;
-    console.log(html)
-}
-// renderMovies()
+    let html = "";
+    html += `<div>${movie.title}</div>`;
+    // html += `<div>${movie.year}</div>`;
+    // html += `<div>${movie.genre}</div>`;
+    html += `<div>${movie.rating}</div>`;
 
-
-function renderCoffees(coffees) {
-    var html = '';
-    for (var i = 0; i < coffees.length; i++) {
-        html += renderCoffee(coffees[i]);
-    }
     return html;
 }
+
+$(".btn-primary").click(function(event){
+    event.preventDefault();
+    let movieTitle = $("#addMovie").val();
+    let movieRating = $("#addRating").val();
+
+    let myObj = {title: movieTitle, rating: movieRating};
+
+    const options = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(myObj)
+    };
+    fetch(movieAPI, options).then((response) => window.reload(response))
+})
+
+
+
+
+
+// function renderCoffees(coffees) {
+//     var html = '';
+//     for (var i = 0; i < coffees.length; i++) {
+//         html += renderCoffee(coffees[i]);
+//     }
+//     return html;
+// }
+
