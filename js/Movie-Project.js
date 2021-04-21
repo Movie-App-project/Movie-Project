@@ -35,7 +35,7 @@ $(document).ready(function () {
     })
         .then((jsonData) => {
             console.log(jsonData);
-            jsonData.forEach(function(movie) {
+            jsonData.forEach(function (movie) {
                 // titleArr.push(${movie.title} ${movie.genre})
                 // console.log(renderMovies(movie));
                 $("#currentMovies").append(`<div>${renderMovies(movie)}</div>`)
@@ -55,6 +55,7 @@ function renderMovies(movie) {
     return html;
     console.log(html)
 }
+
 // renderMovies()
 
 
