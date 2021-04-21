@@ -1,3 +1,5 @@
+"use strict"
+
 // KEY //
 
 fetch(movieAPI).then((response) => {
@@ -16,7 +18,6 @@ var movieTitles = fetch(movieAPI).then((response) => {
     .then((jsonData) => {
         console.log(jsonData);
         jsonData.forEach((movie) => console.log(`${movie.title} ${movie.genre}`))
-
     })
 console.log(movieTitles);
 
@@ -34,8 +35,8 @@ $(document).ready(function () {
     })
         .then((jsonData) => {
             console.log(jsonData);
-            jsonData.forEach(function(movie) {
-                // titleArr.push(`${movie.title} ${movie.genre}`)
+            jsonData.forEach(function (movie) {
+                // titleArr.push(${movie.title} ${movie.genre})
                 // console.log(renderMovies(movie));
                 $("#currentMovies").append(`<div>${renderMovies(movie)}</div>`)
                 // console.log(titleArr)
@@ -54,6 +55,7 @@ function renderMovies(movie) {
     return html;
     console.log(html)
 }
+
 // renderMovies()
 
 

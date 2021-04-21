@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Movie Project</title>
+	<link rel="stylesheet" href="Movie-Project.css">
+
+	<!--- J Query -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+
+<body>
+
+
+<div class="card loadingdiv" style="width: 18rem;">
+	<div class="card-header loadingdiv">
+		Loading
+	</div>
+	<!--    <ul class="list-group list-group-flush">-->
+	<!--        <li class="list-group-item">Cras justo odio</li>-->
+	<!--        <li class="list-group-item">Dapibus ac facilisis in</li>-->
+	<!--        <li class="list-group-item">Vestibulum at eros</li>-->
+	<!--    </ul>-->
+</div>
+
+<div class="card" style="width: 18rem;">
+	<div class="card-header currentMovies">
+		Current Movies
+	</div>
+	<div id="currentMovies">
+
+	</div>
+
+</div>
+
+<div class="card" style="width: 18rem;">
+	<div class="card-header addMovie">
+		Add Movie
+	</div>
+	<form>
+		<div class="form-group">
+			<label for="addMovie">Title</label>
+			<input type="text" class="form-control" id="addMovie" aria-describedby="emailHelp" placeholder="Add Movie">
+
+			<label for="addMovie">Rating</label>
+			<input type="text" class="form-control" id="addMovie" aria-describedby="emailHelp" placeholder="Add Movie">
+
+
+			<small id="emailHelp" class="form-text text-muted">Add a movie Here.</small>
+		</div>
+		<button type="submit" class="btn btn-primary">Submit</button>
+	</form>
+</div>
+
+
+<script src="js/keys.js"></script>
+<script src="js/Movie-Project.js"></script>
+
+</body>
+</html>
