@@ -55,12 +55,47 @@
 		<button type="submit" class="btn-primary">Submit</button>
 	</form>
 </div>
-<div>
-	<button id="delete">x</button>
+
+
+
+<!--- Edit and Delete Movies -->
+
+<div class="card col-4" style="width: 18rem;">
+	<div class="card-header addMovie">
+		Edit and Delete
+	</div>
+
+	<form>
+		<div class="form-group">
+			<div class="form-group">
+				<label for="exampleFormControlSelect1">Movie Select</label>
+				<select class="form-control moviechoice" id="exampleFormControlSelect1">
+
+				</select>
+			</div>
+
+
+			<label for="addMovie">Title</label>
+			<input type="text" class="form-control" id="addMovie" aria-describedby="emailHelp" placeholder="Title">
+
+			<label for="addMovie">Rating</label>
+			<input type="text" class="form-control" id="addMovie" aria-describedby="emailHelp" placeholder="Rating">
+
+
+			<small class="form-text text-muted">Add a movie Here.</small>
+		</div>
+
+		<button type="submit" class="btn btn-info">Submit Edit</button>
+		<button type="submit" class="btn btn-warning">Delete Movie</button>
+	</form>
 </div>
-<div>
-	<button id="edit">x</button>
-</div>
+
+<!--<div>-->
+<!--	<button id="delete">x</button>-->
+<!--</div>-->
+<!--<div>-->
+<!--	<button id="edit">x</button>-->
+<!--</div>-->
 
 <script src="js/keys.js"></script>
 <script src="js/Movie-Project.js"></script>

@@ -14,7 +14,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background:#F73220 !important;
+    /*background:#F73220 !important;*/
+    background: rgb(32, 252, 143) !important;
+
 }
 
 .card {

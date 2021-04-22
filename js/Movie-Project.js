@@ -38,6 +38,7 @@ $(document).ready(function () {
                 // titleArr.push(${movie.title} ${movie.genre})
                 // console.log(renderMovies(movie));
                 $("#currentMovies").append(`<div>${renderMovies(movie)}</div>`)
+                $(".moviechoice").append(`${rendermoviesid(movie)}`)
                 // console.log(titleArr)
             })
         })
@@ -45,6 +46,30 @@ $(document).ready(function () {
     console.log(movieArr)
 });
 
+
+
+// $(".moviechoice").click(function(event){
+//     event.preventDefault();
+//
+//
+//     let myMovies = {id: movieid};
+//
+//     const options = {
+//         method: "GET",
+//         headers: {
+//             "Content-Type": "application/json"
+//         },
+//         body: JSON.stringify(myMovies)
+//     };
+//     fetch(movieAPI, options).then((response) => console.log(response))
+// })
+
+function rendermoviesid(movie) {
+        let movieid = "<option>";
+        movieid += `${movie.title}`;
+        movieid += `</option>`;
+        return movieid;
+}
 
 
 
@@ -55,8 +80,8 @@ function renderMovies(movie) {
     // html += `<div>${movie.genre}</div>`;
     html += `<div>${movie.rating}</div>`;
     html += `<div data-id="${movie.id}"></div>`
-    html += `<button class="delete">x</button>`
-    html += `<button class="edit">edit</button>`
+    // html += `<button class="delete">x</button>`
+    // html += `<button class="edit">edit</button>`
     html += "</div>";
     return html;
 }
