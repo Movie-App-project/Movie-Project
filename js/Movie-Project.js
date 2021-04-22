@@ -106,7 +106,7 @@ $(".btn-primary").click(function(event){
 
 
 
-$("div").on('click', 'button.delete', function(){
+$("option").on('click', 'button.delete', function(){
     // let deleteMethod = {
     //     method: "DELETE",
     //     headers: {
@@ -120,6 +120,8 @@ $("div").on('click', 'button.delete', function(){
     // fetch(movieAPI + `/10`, deleteMethod).then(function(response){
     //     console.log(response);
     // })
+
+
     console.log($(this).prev())
 
 })
@@ -141,7 +143,7 @@ $("#edit").click(function(){
     console.log("test")
 })
 
-
-
-
-
+// $('option').click(function(e){
+//     // console.log($(e.target).val());
+//
+// })
