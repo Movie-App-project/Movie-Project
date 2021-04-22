@@ -4,6 +4,12 @@
     --blue: #0E57AB;
     --lightred:#DAF739;
     --lightblue : #0777F7;
+
+    --jet:#2d2d2a;
+    --blackOlive:#353831;
+    --kombuGreen:#38423B;
+    --DarkSlateGray:#3f5E5A;
+    --SpringGreen:#20FC8F;
 }
 
 *{
@@ -14,18 +20,20 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    /*background:#F73220 !important;*/
-    background: rgb(32, 252, 143) !important;
-
+    background:#20FC8F !important;
 }
 
 .card {
     display:flex;
-    justify-content: center !important;
-    background:#AB1305 !important;
-    box-shadow: 7px 7px #0E57AB;
+    justify-content: center !important;;
+    background:#3f5E5A !important;
+    box-shadow: 3px 3px #38423B;
+    text-align: center;
+    margin-top:7em;
+    margin-right: 3em;
 
 }
+
 
 
 .card-header {
